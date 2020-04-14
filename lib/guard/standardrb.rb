@@ -1,8 +1,29 @@
-require "guard/standardrb/version"
+# coding: utf-8
+
+require 'guard'
+require 'guard/plugin'
 
 module Guard
-  module Standardrb
-    class Error < StandardError; end
-    # Your code goes here...
+  class Standardrb < Plugin
+
+    def start
+      UI.info 'Inspecting Ruby code style of all files with standardrb'
+    end
+
+    def stop
+    end
+
+    def run_on_modifications(res)
+      UI.info 'StandardRb a file was modified'
+      inspect_with_standardrb(res)
+
+      $stdout.puts res if res
+    end
+
+    def inspect_with_standardrb(paths = [])
+      paths.each do |path|
+        system("bundle exec standardrb #{path}")
+      end
+    end
   end
 end
