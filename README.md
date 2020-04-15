@@ -20,6 +20,10 @@ Or install it yourself as:
 
     $ gem install guard-standardrb
 
+To add this guard plugin to your repo, run:
+
+    $ bundle exec guard init standardrb
+
 ## Usage
 
 TODO: Write usage instructions here
