@@ -1,8 +1,20 @@
 # Guard::Standardrb
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/guard/standardrb`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to the new guard plugin `guard-standardrb`!
+This guard is bases on the gem `standardrb`, you can find more information about it https://github.com/testdouble/standard
 
-TODO: Delete this and the text above, and describe your gem
+StandardRB is essentially a wrapper on top of RuboCop, but enforce code convention without much configuration possible.
+This plugin will run with your guard while you modify your code and output any code conventions erros
+
+More Information about StandardRb:
+The beauty of Ruby Standard Style is that it's simple. No one wants to maintain multiple hundred-line style configuration files for every module/project they work on. Enough of this madness!
+
+This gem saves you (and others!) time in three ways:
+
+No configuration. The easiest way to enforce consistent style in your project. Just drop it in.
+Automatically format code. Just run standardrb --fix and say goodbye to messy or inconsistent code.
+Catch style issues & programmer errors early. Save precious code review time by eliminating back-and-forth between reviewer & contributor.
+Adopting Standard style means ranking the importance of code clarity and community conventions higher than personal style. This might not make sense for 100% of projects and development cultures, however open source can be a hostile place for newbies. Setting up clear, automated contributor expectations makes a project healthier.
 
 ## Installation
 
@@ -26,7 +38,9 @@ To add this guard plugin to your repo, run:
 
 ## Usage
 
-TODO: Write usage instructions here
+Once you installed the gem on your repo and initialized it to be added to your GuardFile,
+just run `bundle exec guard` and you should see a line `Standardrb initialized`.
+This means that the guard will run on all files that will be modified by that point in time and output the erros.
 
 ## Development
 
