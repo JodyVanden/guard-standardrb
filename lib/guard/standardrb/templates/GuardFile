@@ -1,7 +1,7 @@
 # Add files and commands to this file, like the example:
 #   watch(%r{file/path}) { `command(s)` }
 #
-guard :standardrb do
+guard :standardrb fix: true do
   UI.info 'StandardRb is initialized'
   watch(/.+\.rb$/)
 end
