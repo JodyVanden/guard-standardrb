@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Jody Vandenschrick"]
   spec.email         = ["jody.vanden@gmail.com"]
 
-  spec.summary       = %q{add a plugin to gard to work with standardrb.}
+  spec.summary       = %q{add a plugin to guard to work with standardrb.}
   spec.homepage      = "https://github.com/JodyVanden/guard-standardrb"
   spec.license       = "MIT"
   # spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
