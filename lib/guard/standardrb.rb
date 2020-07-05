@@ -2,15 +2,13 @@
 
 require 'guard'
 require 'guard/plugin'
+require 'guard/standardrb/version'
 
 module Guard
   class Standardrb < Plugin
 
     def start
       UI.info 'Inspecting Ruby code style of all files with standardrb'
-    end
-
-    def stop
     end
 
     def run_on_modifications(res)
