@@ -4,8 +4,9 @@ require "guard/standardrb/version"
 
 module Guard
   class Standardrb < Plugin
-
-    def initialize
+    def initialize(options = {})
+      super
+      @options = options
     end
 
     def start
