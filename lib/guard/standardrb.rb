@@ -7,6 +7,9 @@ require 'guard/standardrb/version'
 module Guard
   class Standardrb < Plugin
 
+    def initialize
+    end
+
     def start
       Guard::Compat::UI.info 'Inspecting Ruby code style of all files with standardrb'
     end
