@@ -8,11 +8,11 @@ module Guard
   class Standardrb < Plugin
 
     def start
-      UI.info 'Inspecting Ruby code style of all files with standardrb'
+      Guard::Compat::UI.info 'Inspecting Ruby code style of all files with standardrb'
     end
 
     def run_on_modifications(res)
-      UI.info 'StandardRb a file was modified'
+      Guard::Compat::UI.info 'StandardRb a file was modified'
       inspect_with_standardrb(res)
 
       $stdout.puts res if res
