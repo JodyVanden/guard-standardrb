@@ -12,11 +12,7 @@ module Guard
     end
 
     def start
-      UI.info "Standardrb --fix = #{fix}"
-      UI.info "Inspecting Ruby code style of all files with standardrb"
-    end
-
-    def start
+      Guard::Compat::UI.info "Standardrb --fix = #{fix}"
       Guard::Compat::UI.info "Inspecting Ruby code style of all files with standardrb"
     end
 
@@ -29,10 +25,7 @@ module Guard
 
     def inspect_with_standardrb(paths = [])
       args = ["bundle", "exec", "standardrb"]
-
-      if fix
-        args << "--fix"
-      end
+      args << "--fix" if fix
 
       args += paths
 
