@@ -4,7 +4,7 @@ Welcome to the new guard plugin `guard-standardrb`!
 This guard is bases on the gem `standardrb`, you can find more information about it https://github.com/testdouble/standard
 
 StandardRB is essentially a wrapper on top of RuboCop, but enforce code convention without much configuration possible.
-This plugin will run with your guard while you modify your code and output any code conventions erros
+This plugin will run with your guard while you modify your code and output any code conventions errors in the terminal.
 
 More Information about StandardRb:
 The beauty of Ruby Standard Style is that it's simple. No one wants to maintain multiple hundred-line style configuration files for every module/project they work on. Enough of this madness!
@@ -42,6 +42,8 @@ Once you installed the gem on your repo and initialized it to be added to your G
 just run `bundle exec guard` and you should see a line `Standardrb initialized`.
 This means that the guard will run on all files that will be modified by that point in time and output the erros.
 
+Please read [Guard usage doc](https://github.com/guard/guard#readme).
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
@@ -60,3 +62,11 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## Code of Conduct
 
 Everyone interacting in the Guard::Standardrb project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/guard-standardrb/blob/master/CODE_OF_CONDUCT.md).
+
+### Author
+
+[Jody Vandenschrick](https://github.com/JodyVanden) ([@jodyvanden](https://twitter.com/jodyvanden))
+
+### Contributors
+
+[https://github.com/JodyVanden/guard-standardrb/graphs/contributors](https://github.com/JodyVanden/guard-standardrb/graphs/contributors)
