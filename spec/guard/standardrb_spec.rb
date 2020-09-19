@@ -1,4 +1,5 @@
 require "guard/compat/test/helper"
+require "pry-byebug"
 
 RSpec.describe Guard::Standardrb do
   it "has a version number" do
