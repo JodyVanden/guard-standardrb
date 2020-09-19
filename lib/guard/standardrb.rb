@@ -12,11 +12,8 @@ module Guard
     end
 
     def start
-      Guard::Compat::UI.info "Standardrb --fix = #{fix}"
       Guard::Compat::UI.info "Inspecting Ruby code style of all files with standardrb"
-    end
-
-    def stop
+      Guard::Compat::UI.info "Standardrb --fix = #{fix}"
     end
 
     def run_on_modifications(res)
