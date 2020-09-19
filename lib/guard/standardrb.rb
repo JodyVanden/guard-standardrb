@@ -16,6 +16,9 @@ module Guard
       Guard::Compat::UI.info "Inspecting Ruby code style of all files with standardrb"
     end
 
+    def stop
+    end
+
     def run_on_modifications(res)
       Guard::Compat::UI.info "StandardRb a file was modified"
       inspect_with_standardrb(res)
