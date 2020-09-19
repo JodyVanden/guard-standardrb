@@ -31,7 +31,6 @@ module Guard
       args << "--fix" if fix
 
       args += paths
-
       system(*args)
     end
   end
