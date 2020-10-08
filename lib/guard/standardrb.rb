@@ -4,13 +4,16 @@ require "guard/standardrb/version"
 
 module Guard
   class Standardrb < Plugin
-    def initialize(options = {})
+    attr_reader :fix
+
+    def initialize(opts = {})
       super
-      @options = options
+      @fix = opts[:fix]
     end
 
     def start
       Guard::Compat::UI.info "Inspecting Ruby code style of all files with standardrb"
+      Guard::Compat::UI.info "Standardrb --fix = #{fix}"
     end
 
     def run_on_modifications(res)
@@ -21,9 +24,11 @@ module Guard
     end
 
     def inspect_with_standardrb(paths = [])
-      paths.each do |path|
-        system("bundle exec standardrb #{path}")
-      end
+      args = ["bundle", "exec", "standardrb"]
+      args << "--fix" if fix
+
+      args += paths
+      system(*args)
     end
   end
 end

@@ -21,10 +21,10 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'guard', '>= 2.0.0'
   spec.add_dependency 'guard-compat', '~> 1.0'
   spec.add_dependency 'standardrb'
-  
+
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec', '~> 3.1'
-
+  spec.add_development_dependency 'pry-byebug'
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.

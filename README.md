@@ -44,6 +44,19 @@ This means that the guard will run on all files that will be modified by that po
 
 Please read [Guard usage doc](https://github.com/guard/guard#readme).
 
+## Add the argument fix
+
+with the release of the version `0.2.0` the gem gets the possibility to auto fix standardrb errors that could be easily fixed.
+you can choose to activate or disable it.
+
+After the initilisation of the guard, jump into the GuardFile and you can modify the argument fix to be `true` or `false`
+
+```
+guard :standardrb fix: false do
+ ...
+end
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

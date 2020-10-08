@@ -1,7 +1,12 @@
-# Add files and commands to this file, like the example:
-#   watch(%r{file/path}) { `command(s)` }
-#
-guard :standardrb do
+# You can choose to pass an option to the guard-standardrb plugin
+# to fix easy issues
+
+# guard :standardrb, fix: true do
+#   UI.info 'StandardRb is initialized'
+#   watch(/.+\.rb$/)
+# end
+
+guard :standardrb, fix: false do
   UI.info 'StandardRb is initialized'
   watch(/.+\.rb$/)
 end

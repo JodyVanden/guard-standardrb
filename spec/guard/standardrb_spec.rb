@@ -1,18 +1,20 @@
 require "guard/compat/test/helper"
+require "pry-byebug"
 
 RSpec.describe Guard::Standardrb do
   it "has a version number" do
     expect(Guard::StandardrbVersion).not_to be nil
   end
 
-  let(:standardrb) { Guard::Standardrb.new }
+  subject { Guard::Standardrb.new(fix: false) }
 
   describe "#start" do
     it "prints message" do
+      allow(Guard::Compat::UI).to receive(:info)
       expect(Guard::Compat::UI).to receive(:info)
-        .with("Inspecting Ruby code style of all files with standardrb")
+        .with("Standardrb --fix = false")
 
-      standardrb.start
+      subject.start
     end
   end
 
@@ -21,16 +23,22 @@ RSpec.describe Guard::Standardrb do
       expect(Guard::Compat::UI).to receive(:info)
         .with("StandardRb a file was modified")
 
-      standardrb.run_on_modifications([])
+      subject.run_on_modifications([])
     end
   end
 
   describe "#inspect_with_standardrb" do
-    let(:paths) { ["lorem", "lorem"] }
+    let(:paths) { ["lorem", "ipsum"] }
+    let(:args) { ["bundle", "exec", "standardrb"] }
 
-    it "runs standardrb on the files" do
-      allow_any_instance_of(Kernel).to receive(:system)
-      expect(standardrb.inspect_with_standardrb(paths)).to eq(paths)
+    it "runs standardrb" do
+      expect(subject).to receive(:inspect_with_standardrb)
+      subject.inspect_with_standardrb
+    end
+
+    it "runs standardrb on specific files passed in" do
+      expect(subject).to receive(:inspect_with_standardrb).with(paths)
+      subject.run_on_modifications(paths)
     end
   end
 end
