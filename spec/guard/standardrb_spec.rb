@@ -24,6 +24,11 @@ RSpec.describe Guard::Standardrb do
         subject { super()[:all_on_start] }
         it { should be_falsey }
       end
+
+      describe "[:progress]" do
+        subject { super()[:progress] }
+        it { should be_falsey }
+      end
     end
   end
 
@@ -52,6 +57,15 @@ RSpec.describe Guard::Standardrb do
         expect(subject).not_to receive(:run_all)
         subject.start
       end
+    end
+  end
+
+  describe "#run_on_additions" do
+    it "prints message" do
+      expect(Guard::UI).to receive(:info)
+        .with("StandardRb a file was added")
+
+      subject.run_on_additions([])
     end
   end
 
