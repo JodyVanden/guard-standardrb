@@ -52,8 +52,18 @@ you can choose to activate or disable it.
 After the initilisation of the guard, jump into the GuardFile and you can modify the argument fix to be `true` or `false`
 
 ```
-guard :standardrb fix: false do
+guard :standardrb, fix: false do
  ...
+end
+```
+
+## Other options
+
+Pass standardrb's ```--format progress``` option using ```progress: true``` and trigger inspection on startup using ```all_on_start: true```
+
+```
+guard :standardrb, fix: false, all_on_start: true, progress: true do
+  ...
 end
 ```
 

@@ -1,33 +1,50 @@
-require "guard"
 require "guard/plugin"
 require "guard/standardrb/version"
 
 module Guard
   class Standardrb < Plugin
-    attr_reader :fix
-
     def initialize(opts = {})
       super
-      @fix = opts[:fix]
+
+      @options = {
+        fix: false,
+        all_on_start: false,
+        progress: false
+      }.merge(opts)
     end
 
     def start
-      Guard::Compat::UI.info "Inspecting Ruby code style of all files with standardrb"
-      Guard::Compat::UI.info "Standardrb --fix = #{fix}"
+      Guard::UI.info "Inspecting Ruby code style with standardrb"
+      Guard::UI.info "fix = #{@options[:fix]}," +
+      " all_on_start = #{@options[:all_on_start]}," +
+      " progress = #{@options[:progress]}"
+      run_all if @options[:all_on_start]
     end
 
-    def run_on_modifications(res)
-      Guard::Compat::UI.info "StandardRb a file was modified"
-      inspect_with_standardrb(res)
+    def run_all
+      inspect_with_standardrb
+    end
 
-      $stdout.puts res if res
+    def run_on_additions(paths)
+      Guard::UI.info "StandardRb a file was added"
+      inspect_with_standardrb(paths)
+    end
+
+    def run_on_modifications(paths)
+      Guard::UI.info "StandardRb a file was modified"
+      inspect_with_standardrb(paths)
+
+      $stdout.puts paths if paths
     end
 
     def inspect_with_standardrb(paths = [])
       args = ["bundle", "exec", "standardrb"]
-      args << "--fix" if fix
+      args << "--fix" if @options[:fix]
+      args << ["--format", "progress"] if @options[:progress]
 
+      args.flatten!
       args += paths
+
       system(*args)
     end
   end
