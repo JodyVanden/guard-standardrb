@@ -36,7 +36,7 @@ RSpec.describe Guard::Standardrb do
     it "prints message" do
       allow(Guard::UI).to receive(:info)
       expect(Guard::UI).to receive(:info)
-        .with("Standardrb --fix = false")
+        .with("fix = false, all_on_start = false, progress = false")
 
       subject.start
     end

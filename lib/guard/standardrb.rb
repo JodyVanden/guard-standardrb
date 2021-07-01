@@ -14,8 +14,10 @@ module Guard
     end
 
     def start
-      Guard::UI.info "Inspecting Ruby code style of all files with standardrb"
-      Guard::UI.info "Standardrb --fix = #{@options[:fix]}"
+      Guard::UI.info "Inspecting Ruby code style with standardrb"
+      Guard::UI.info "fix = #{@options[:fix]}," +
+      " all_on_start = #{@options[:all_on_start]}," +
+      " progress = #{@options[:progress]}"
       run_all if @options[:all_on_start]
     end
 

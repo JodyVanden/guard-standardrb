@@ -3,6 +3,6 @@
 #   watch(/.+\.rb$/)
 # end
 
-guard :standardrb, fix: false do
+guard :standardrb, fix: false, all_on_start: false, progress: false do
   watch(/.+\.rb$/)
 end
