@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "guard", ">= 2.0.0"
   spec.add_dependency "guard-compat", "~> 1.0"
-  spec.add_dependency "standardrb"
+  spec.add_dependency "standard"
 
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec", "~> 3.1"
