@@ -18,12 +18,12 @@ Gem::Specification.new do |spec|
   spec.metadata["source_code_uri"] = "https://github.com/JodyVanden/guard-standardrb"
   spec.metadata["changelog_uri"] = "https://github.com/JodyVanden/guard-standardrb"
 
-  spec.add_dependency "guard", ">= 2.0.0"
-  spec.add_dependency "guard-compat", "~> 1.0"
+  spec.add_dependency "guard", ">= 2.18.0"
+  spec.add_dependency "guard-compat", "~> 1.2"
   spec.add_dependency "standardrb"
 
   spec.add_development_dependency "rake"
-  spec.add_development_dependency "rspec", "~> 3.1"
+  spec.add_development_dependency "rspec", "~> 3.12"
   spec.add_development_dependency "pry-byebug"
 
   # Specify which files should be added to the gem when it is released.
