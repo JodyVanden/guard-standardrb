@@ -15,9 +15,9 @@ module Guard
 
     def start
       Guard::UI.info "Inspecting Ruby code style with standardrb"
-      Guard::UI.info "fix = #{@options[:fix]}," +
-      " all_on_start = #{@options[:all_on_start]}," +
-      " progress = #{@options[:progress]}"
+      Guard::UI.info "fix = #{@options[:fix]}," \
+        " all_on_start = #{@options[:all_on_start]}," \
+        " progress = #{@options[:progress]}"
       run_all if @options[:all_on_start]
     end
 
