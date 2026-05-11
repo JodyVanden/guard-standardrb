@@ -10,13 +10,13 @@ Gem::Specification.new do |spec|
   spec.summary = "add a plugin to guard to work with standardrb."
   spec.homepage = "https://github.com/JodyVanden/guard-standardrb"
   spec.license = "MIT"
-  # spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
+  spec.required_ruby_version = ">= 3.0.0"
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/JodyVanden/guard-standardrb"
-  spec.metadata["changelog_uri"] = "https://github.com/JodyVanden/guard-standardrb"
+  spec.metadata["source_code_uri"] = "https://github.com/JodyVanden/guard-standardrb/tree/master"
+  spec.metadata["changelog_uri"] = "https://github.com/JodyVanden/guard-standardrb/blob/master/CHANGELOG.md"
 
   spec.add_dependency "guard", ">= 2.0.0"
   spec.add_dependency "guard-compat", "~> 1.0"
